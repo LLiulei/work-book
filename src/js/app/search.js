@@ -1,9 +1,10 @@
-require(['jquery','render','text!searchTpl','lazyload','storage'],function($,render,searchTpl,lazyload,storage){
+require(['jquery','render','text!searchTpl','lazyload','storage','bscroll'],function($,render,searchTpl,lazyload,storage,bscroll){
     $('body').append(searchTpl);
 
     var _searchList = $('.search-list');
     var _tagWrap = $('.tag-wrap');
     var _ipt = $('.ipt');
+
     // 点击back 返回首页
     $('.icon-back').on('click',function(){
         location.href = '/';

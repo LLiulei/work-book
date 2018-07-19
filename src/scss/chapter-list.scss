@@ -1,0 +1,17 @@
+@import './tpl/_book-t-b-list.scss';
+@import './common.scss';
+
+.chapter-wrap{
+    -webkit-box-flex:1;
+    flex:1;
+    overflow: hidden;
+    .chapter-list{
+        width: 100%;
+        li{
+            font-size:pxTorem(12px);
+            color:gray;
+            padding: pxTorem(10px) pxTorem(15px);
+            border-bottom: 1px solid #7d7d7d;
+        }
+    }
+}

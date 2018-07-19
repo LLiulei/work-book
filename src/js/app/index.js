@@ -1,4 +1,4 @@
-require(['jquery','swiper','bscroll','getSlideDirection','text!bookTB','render','text!indexTpl','text!bookLR'],function($,swiper,bscroll,getSlideDirection,bookTB,render,indexTpl,bookLR){
+require(['jquery','swiper','bscroll','getSlideDirection','text!bookTB','render','text!indexTpl','text!bookLR','storage'],function($,swiper,bscroll,getSlideDirection,bookTB,render,indexTpl,bookLR,storage){
 
     $('body').append(bookTB);
     $('body').append(indexTpl);
@@ -6,7 +6,7 @@ require(['jquery','swiper','bscroll','getSlideDirection','text!bookTB','render',
     // 缓存变量
     var _line = $('.line');
     // 实例化wrap-swiper
-    var wrapSwiper = new swiper('.wrap-swiper');
+    var wrapSwiper;
     //滑动处理
     var startX, startY;
     document.addEventListener('touchstart',function (ev) {
@@ -177,6 +177,7 @@ require(['jquery','swiper','bscroll','getSlideDirection','text!bookTB','render',
 
         // 重磅推荐
         var recommendData = format(res.items[2].data.data,5);
+        $('.content').show();
         // 格式化重磅数据
         function format(data,num){
             var len = Math.ceil(data.length / num);
@@ -187,8 +188,12 @@ require(['jquery','swiper','bscroll','getSlideDirection','text!bookTB','render',
             return target;
         }
 
+        // 换一换
         var heavynum = 0;
-        render('#recommend-tpl','.recommend',recommendData[heavynum],true)
+        render('#recommend-tpl','.recommend',recommendData[heavynum],true);
+
+        $('.content').show();
+        wrapSwiper = new swiper('.wrap-swiper');
         $('.change-btn').on('click',function(){
             heavynum++;
             if(heavynum == recommendData.length){
@@ -201,5 +206,34 @@ require(['jquery','swiper','bscroll','getSlideDirection','text!bookTB','render',
     // 切换数据的样式
     $('.switch-btn').on('click',function(){
         $('.shelf-list').toggleClass('change-style');
+    })
+
+    // 点击类别
+    $('.types').on('click','dl',function(){
+        var txt = $(this).find('dd').text();
+        var type;
+        if(txt == '女生'){
+            type = 'female';
+        }else if(txt == '男生'){
+            type = 'boy';
+        }
+        location.href = '../../page/list.html?type=' + type;
+    })
+
+    // 点击本周最火
+    $('.hot').on('click','li',function(){
+        var fiction_id = $(this).attr('data-id');
+        location.href = '../../page/detail.html?fiction_id=' + fiction_id;
+    })
+
+    // 点击person
+    $('.icon-person').on('click',function(){
+        var code = storage.get('code') || 0;
+
+        if(code){
+            location.href = '../../page/my.html';
+        }else{
+            location.href = '../../page/login.html';
+        }
     })
 })

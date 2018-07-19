@@ -1,0 +1,48 @@
+@import './common.scss';
+
+.wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    header{
+        width: 100%;
+        background: $tab-active-color;
+        text-align: center;
+        a{
+            width: 100%;
+            height: pxTorem(44px);
+            font-size:pxTorem(16px);
+            color: $write-color;
+            line-height: pxTorem(44px);
+        }
+    }
+    section{
+        flex:1;
+        width: 100%;
+        height: 100%;
+        input{
+            width: 80%;
+            height: pxTorem(30px);
+            line-height: pxTorem(30px);
+            margin: pxTorem(30px) auto;
+            border:1px solid $tab-active-color;
+            border-radius:pxTorem(5px);
+            margin:  pxTorem(30px) 8.5%;
+            padding-left:  pxTorem(10px);
+        }
+        #login-btn{
+            width: 80%;
+            height: pxTorem(30px);
+            line-height: pxTorem(30px);
+            margin: pxTorem(30px) auto;
+            background: $tab-active-color;
+            font-size:pxTorem(16px);
+            color: $write-color;
+            border:1px solid $tab-active-color;
+            outline: none;
+            border-radius:pxTorem(5px);
+            margin:  pxTorem(30px) 10%;
+        }
+    }
+}

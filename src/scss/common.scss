@@ -48,6 +48,22 @@ body{
             left: 0;
             top: 0;
         }
+        .icon-home{
+            width: pxTorem(44px);
+            height: pxTorem(44px);
+            @include bg('../images/icon-home.png');
+            background-size: pxTorem(22px);
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .title{
+            width: pxTorem(55px);
+            height: pxTorem(44px);
+            line-height: pxTorem(44px);
+            margin-left: pxTorem(55px);
+            font-size:pxTorem(16px);
+        }
         .search-wrap{
             margin: pxTorem(5px) pxTorem(20px) 0 pxTorem(44px);
             height: pxTorem(34px);
@@ -111,52 +127,56 @@ body{
     .content{
         width: 100%;
         flex:1;
-        overflow: hidden;
-        .block{
-            width: 100%;
-            border-bottom:pxTorem(10px) solid $border-color;
-            h1{
-                width: 100%;
-                height: pxTorem(44px);
-                border-left:pxTorem(6px) solid $tab-active-color;
-                border-bottom:1px solid $border-color;
-                font-size: pxTorem(18px);
-                line-height: pxTorem(44px);
-                padding-left: pxTorem(10px);
-            }
-        }
-        .inner-content{
-            .tag-wrap{
-                h2{
-                    padding: pxTorem(10px);
-                }
-                .type-tags{
-                    padding: pxTorem(10px);
-                    .tag{
-                        display: inline-block;
-                        line-height: 1.8;
-                        padding: 0 0.53333rem;
-                        color:$tag-color;
-                        border-radius:0.10667rem;
-                        font-size:0.32rem;
-                        text-align: center;
-                        border:1px solid #ddd;
-                        margin: 0 0.1rem 0.2rem 0;
-                        &:nth-child(3n+1){
-                            background-color: $tag-bg1;
-                        }
-                        &:nth-child(3n+2){
-                            background-color: $tag-bg2;
-                        }
-                        &:nth-child(3n+3){
-                            background-color: $tag-bg3;
-                        }
-                    }
-                }
-            }
-        }
+        overflow-y: scroll;
     }
 }
+.block{
+    width: 100%;
+    border-bottom:pxTorem(10px) solid $border-color;
+    h1{
+        width: 100%;
+        height: pxTorem(44px);
+        border-left:pxTorem(6px) solid $tab-active-color;
+        border-bottom:1px solid $border-color;
+        font-size: pxTorem(18px);
+        line-height: pxTorem(44px);
+        padding-left: pxTorem(10px);
+    }
+}
+// .inner-content{
+//     .tag-wrap{
+//         h2{
+//             padding: pxTorem(10px);
+//         }
+//         .type-tags{
+//             padding: pxTorem(10px);
+//             .tag{
+//                 display: inline-block;
+//                 line-height: 1.8;
+//                 padding: 0 0.53333rem;
+//                 color:$tag-color;
+//                 border-radius:0.10667rem;
+//                 font-size:0.32rem;
+//                 text-align: center;
+//                 border:1px solid #ddd;
+//                 margin: 0 0.1rem 0.2rem 0;
+//                 &:nth-child(3n+1){
+//                     background-color: $tag-bg1;
+//                 }
+//                 &:nth-child(3n+2){
+//                     background-color: $tag-bg2;
+//                 }
+//                 &:nth-child(3n+3){
+//                     background-color: $tag-bg3;
+//                 }
+//             }
+//         }
+//     }
+// }
 .none{
     display: none;
+}
+.list-content{
+    flex: 1;
+    overflow-y: scroll;
 }

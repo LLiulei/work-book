@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>书籍详情</title>
+    <script src="../js/libs/flexible.js"></script>
+    <link rel="stylesheet" href="../css/chapter-list.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <span class="icon-back"></span>
+            <div class="title">目录</div>
+            <span class="icon-home"></span>
+        </header>
+        <div class="chapter-wrap">
+            <ul class="chapter-list"></ul>
+        </div>
+        <script id="chapter-template" type="text/x-handlebars-template">
+            {{#each this}}
+            <li>{{title}}</li>
+            {{/each}}
+        </script>
+    </div>
+    <script src="../js/libs/require.js"></script>
+    <script>
+        require(['../js/main.js'],function(){
+            require(['chapterList'])
+        })
+    </script>
+</body>
+</html>

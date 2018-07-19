@@ -377,3 +377,55 @@ body {
   flex: 1;
   overflow-y: scroll;
 }
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap header {
+  width: 100%;
+  background: #ff6600;
+  text-align: center;
+}
+
+.wrap header a {
+  width: 100%;
+  height: 1.17333rem;
+  font-size: 0.42667rem;
+  color: #fff;
+  line-height: 1.17333rem;
+}
+
+.wrap section {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.wrap section input {
+  width: 80%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  margin: 0.8rem auto;
+  border: 1px solid #ff6600;
+  border-radius: 0.13333rem;
+  margin: 0.8rem 8.5%;
+  padding-left: 0.26667rem;
+}
+
+.wrap section #login-btn {
+  width: 80%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  margin: 0.8rem auto;
+  background: #ff6600;
+  font-size: 0.42667rem;
+  color: #fff;
+  border: 1px solid #ff6600;
+  outline: none;
+  border-radius: 0.13333rem;
+  margin: 0.8rem 10%;
+}
